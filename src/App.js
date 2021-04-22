@@ -5,6 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import './App.css';
 
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import About from './pages/About';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +25,7 @@ class App extends React.Component {
       home: {
         title: 'Placeholder for title',
         subTitle: 'Placeholder for subTitle',
-        headline: 'Check out projects below!',
+        text: 'Placeholder for text',
       },
       about: {
         title: 'About Me',
@@ -57,6 +63,30 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+          <Route
+            path='/'
+            exact
+            render={() => (
+              <HomePage
+                title={this.state.home.title}
+                subTitle={this.state.home.subTitle}
+                text={this.state.home.text}
+              />
+            )}
+          />
+          <Route
+            path='/about'
+            render={() => <About title={this.state.about.title} />}
+          />
+          <Route
+            path='/resume'
+            render={() => <Resume title={this.state.resume.title} />}
+          />
+          <Route
+            path='/contact'
+            render={() => <Contact title={this.state.contact.title} />}
+          />
+          <Footer />
         </Container>
       </Router>
     );
