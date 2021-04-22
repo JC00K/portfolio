@@ -21,6 +21,7 @@ class Carousel extends React.Component {
         {
           id: 1,
           title: 'Earth Moon Render',
+          subTitle: 'Interactive render of the Earth and Moon',
           imgSrc: earthmoon,
           link: 'https://earth-moon-render.herokuapp.com/',
           selected: false,
