@@ -8,7 +8,6 @@ import './App.css';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
-import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 
 class App extends React.Component {
@@ -19,7 +18,6 @@ class App extends React.Component {
       headerLinks: [
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
-        { title: 'Resume', path: '/resume' },
         { title: 'Contact', path: '/contact' },
       ],
       home: {
@@ -29,9 +27,6 @@ class App extends React.Component {
       },
       about: {
         title: 'About Me',
-      },
-      resume: {
-        title: 'Placeholder for resume (presentation pending)',
       },
       contact: {
         title: "Let's Talk!",
@@ -54,9 +49,14 @@ class App extends React.Component {
                 <Link className='nav-link' to='/about'>
                   About
                 </Link>
-                <Link className='nav-link' to='/resume'>
+                <a
+                  className='nav-link'
+                  href='https://drive.google.com/file/d/1azlO0noXVV78STI0wx1NZt3COC5utBCb/view?usp=sharing'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   Resume
-                </Link>
+                </a>
                 <Link className='nav-link' to='/contact'>
                   Contact
                 </Link>
@@ -77,10 +77,6 @@ class App extends React.Component {
           <Route
             path='/about'
             render={() => <About title={this.state.about.title} />}
-          />
-          <Route
-            path='/resume'
-            render={() => <Resume title={this.state.resume.title} />}
           />
           <Route
             path='/contact'
