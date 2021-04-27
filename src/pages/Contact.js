@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Message from '../components/Message';
 import Content from '../components/Content';
+const axios = require('axios').default;
 
 class Contact extends React.Component {
   constructor(props) {
@@ -10,28 +11,46 @@ class Contact extends React.Component {
     this.state = {
       name: '',
       email: '',
+      subject: '',
       message: '',
-      disabled: false,
-      emailSent: null,
     };
   }
 
-  handleChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
+  onNameChange = (event) => {
+    this.setState({ name: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  onEmailChange = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
+  onSubjectChange = (event) => {
+    this.setState({ subject: event.target.value });
+  };
+
+  onMsgChange = (event) => {
+    this.setState({ message: event.target.value });
+  };
+
+  submitEmail = (event) => {
     event.preventDefault();
-    this.setState({
-      disabled: true,
+    axios({
+      method: 'POST',
+      url: '/send',
+      data: this.state,
+    }).then((response) => {
+      if (response.data.status === 'success') {
+        alert('Message Sent!');
+        this.resetForm();
+      } else if (response.data.status === 'fail') {
+        alert('Message failed to send!');
+      }
     });
   };
+
+  resetForm() {
+    this.setState({ name: '', email: '', subject: '', message: '' });
+  }
 
   render() {
     return (
@@ -47,7 +66,7 @@ class Contact extends React.Component {
                 name='name'
                 type='text'
                 value={this.state.name}
-                onChange={this.handleChange}
+                onChange={this.onNameChange}
               />
             </Form.Group>
 
@@ -58,7 +77,18 @@ class Contact extends React.Component {
                 name='email'
                 type='email'
                 value={this.state.email}
-                onChange={this.handleChange}
+                onChange={this.onEmailChange}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label htmlFor='subject'>Subject</Form.Label>
+              <Form.Control
+                id='subject'
+                name='subject'
+                type='text'
+                value={this.state.subject}
+                onChange={this.onSubjectChange}
               />
             </Form.Group>
 
@@ -70,25 +100,13 @@ class Contact extends React.Component {
                 as='textarea'
                 rows='3'
                 value={this.state.message}
-                onChange={this.handleChange}
+                onChange={this.onMsgChange}
               />
             </Form.Group>
 
-            <Button
-              className='d-inline-block'
-              variant='primary'
-              type='submit'
-              disabled={this.state.disabled}
-            >
+            <Button className='d-inline-block' variant='primary' type='submit'>
               Send
             </Button>
-
-            {this.state.emailSent === true && (
-              <p className='d-inline success-msg'>Email Sent!</p>
-            )}
-            {this.state.emailSent === false && (
-              <p className='d-inline error-msg'>Email Not Sent!</p>
-            )}
           </Form>
         </Content>
       </div>
