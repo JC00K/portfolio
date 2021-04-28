@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Message from '../components/Message';
 import Content from '../components/Content';
-const axios = require('axios').default;
 
 class Contact extends React.Component {
   constructor(props) {
@@ -11,7 +10,6 @@ class Contact extends React.Component {
     this.state = {
       name: '',
       email: '',
-      subject: '',
       message: '',
     };
   }
@@ -24,28 +22,8 @@ class Contact extends React.Component {
     this.setState({ email: event.target.value });
   };
 
-  onSubjectChange = (event) => {
-    this.setState({ subject: event.target.value });
-  };
-
   onMsgChange = (event) => {
     this.setState({ message: event.target.value });
-  };
-
-  submitEmail = (event) => {
-    event.preventDefault();
-    axios({
-      method: 'POST',
-      url: '/send',
-      data: this.state,
-    }).then((response) => {
-      if (response.data.status === 'success') {
-        alert('Message Sent!');
-        this.resetForm();
-      } else if (response.data.status === 'fail') {
-        alert('Message failed to send!');
-      }
-    });
   };
 
   resetForm() {
@@ -58,6 +36,21 @@ class Contact extends React.Component {
         <Message title={this.props.title} />
 
         <Content>
+          <form
+            method='post'
+            action='https://www.flexyform.com/f/ea45921afa5a1aa5d3a36f6fdfb6adb4c18095de'
+          >
+            <p>
+              <label>Fullname</label>
+              <input type='text' name='fullname' />
+            </p>
+            <p>
+              <label>Email</label>
+              <input type='email' name='_reply_to' />
+            </p>
+            <button type='submit'>Send</button>
+          </form>
+
           <Form onSubmit={this.handleSubmit}>
             <Form.Group>
               <Form.Label htmlFor='full-name'>Full Name</Form.Label>
@@ -78,17 +71,6 @@ class Contact extends React.Component {
                 type='email'
                 value={this.state.email}
                 onChange={this.onEmailChange}
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label htmlFor='subject'>Subject</Form.Label>
-              <Form.Control
-                id='subject'
-                name='subject'
-                type='text'
-                value={this.state.subject}
-                onChange={this.onSubjectChange}
               />
             </Form.Group>
 
