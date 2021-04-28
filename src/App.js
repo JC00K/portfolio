@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import './App.css';
-
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import About from './pages/About';

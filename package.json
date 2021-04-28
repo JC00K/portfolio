@@ -11,7 +11,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "gatsby-cli": "^3.3.0",
+    "installed": "^3.3.1",
     "nodemailer": "^6.5.0",
+    "ou": "0.0.2",
+    "package": "^1.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
@@ -19,9 +23,11 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-spring": "^9.1.2",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "yarn": "^1.22.10"
   },
   "scripts": {
+    "develop": "gatsby develop",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
