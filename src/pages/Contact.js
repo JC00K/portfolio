@@ -1,6 +1,9 @@
 import React from 'react';
 import Message from '../components/Message';
 import Content from '../components/Content';
+import Button from '@material-ui/core/Button';
+import FormLabel from '@material-ui/core/FormLabel';
+import Input from '@material-ui/core/Input';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -39,18 +42,20 @@ class Contact extends React.Component {
             action='https://www.flexyform.com/f/ea45921afa5a1aa5d3a36f6fdfb6adb4c18095de'
           >
             <p>
-              <label htmlFor='full-name'>Full Name</label>
-              <input type='text' name='name' />
+              <FormLabel htmlFor='full-name'>Name</FormLabel>
+              <Input type='text' name='name' />
             </p>
             <p>
-              <label htmlFor='email'>Email</label>
-              <input type='email' name='_reply_to' />
+              <FormLabel htmlFor='email'>Email</FormLabel>
+              <Input type='email' name='_reply_to' />
             </p>
             <p>
-              <label htmlFor='message'>Message</label>
-              <input type='text' name='message' />
+              <FormLabel htmlFor='message'>Message</FormLabel>
+              <Input type='text' name='message' />
             </p>
-            <button type='submit'>Send</button>
+            <Button type='submit' variant='contained' color='primary'>
+              Send
+            </Button>
           </form>
         </Content>
       </div>
