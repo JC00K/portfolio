@@ -57,8 +57,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.6.0"
-  }
+  "devDependencies": {}
 }
