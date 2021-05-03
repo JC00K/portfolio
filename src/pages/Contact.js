@@ -4,6 +4,7 @@ import Content from '../components/Content';
 import Button from '@material-ui/core/Button';
 import FormLabel from '@material-ui/core/FormLabel';
 import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -43,15 +44,23 @@ class Contact extends React.Component {
           >
             <p>
               <FormLabel htmlFor='full-name'>Name</FormLabel>
-              <Input type='text' name='name' />
+              <TextField type='text' name='name' required />
             </p>
             <p>
               <FormLabel htmlFor='email'>Email</FormLabel>
-              <Input type='email' name='_reply_to' />
+              <TextField type='email' name='_reply_to' required />
             </p>
             <p>
               <FormLabel htmlFor='message'>Message</FormLabel>
-              <Input type='text' name='message' />
+              <TextField
+                variant='outlined'
+                type='text'
+                name='message'
+                multiline
+                rows={3}
+                fullWidth
+                required
+              />
             </p>
             <Button type='submit' variant='contained' color='primary'>
               Send
