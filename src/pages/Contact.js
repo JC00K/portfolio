@@ -3,7 +3,6 @@ import Message from '../components/Message';
 import Content from '../components/Content';
 import Button from '@material-ui/core/Button';
 import FormLabel from '@material-ui/core/FormLabel';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 
 class Contact extends React.Component {
