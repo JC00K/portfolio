@@ -43,11 +43,11 @@ class Contact extends React.Component {
           >
             <p>
               <FormLabel htmlFor='full-name'>Name</FormLabel>
-              <TextField type='text' name='name' required />
+              <TextField type='text' name='name' fullWidth required />
             </p>
             <p>
               <FormLabel htmlFor='email'>Email</FormLabel>
-              <TextField type='email' name='_reply_to' required />
+              <TextField type='email' name='_reply_to' fullWidth required />
             </p>
             <p>
               <FormLabel htmlFor='message'>Message</FormLabel>
