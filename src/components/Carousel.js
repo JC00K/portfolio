@@ -1,6 +1,6 @@
 import React from 'react';
 import sketchi from '../images/sketchi.png';
-import earthmoon from '../images/earthmoon.jpeg';
+import earthmoon from '../images/earthmoon.png';
 import Card from './Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
