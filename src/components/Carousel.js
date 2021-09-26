@@ -13,6 +13,14 @@ class Carousel extends React.Component {
       items: [
         {
           id: 0,
+          title: 'Stat To Stat',
+          subTitle: 'Compare stats for multiple players/teams in one place',
+          imgSrc: stattostat,
+          link: 'https://stattostat.netlify.app',
+          selected: false,
+        },
+        {
+          id: 1,
           title: 'Sketchi',
           subTitle: 'Pictionary with a twist',
           imgSrc: sketchi,
@@ -20,19 +28,11 @@ class Carousel extends React.Component {
           selected: false,
         },
         {
-          id: 1,
+          id: 2,
           title: 'Earth Moon Render',
           subTitle: 'Interactive render of the Earth and Moon',
           imgSrc: earthmoon,
           link: 'https://earth-moon-render.herokuapp.com/',
-          selected: false,
-        },
-        {
-          id: 2,
-          title: 'Stat To Stat',
-          subTitle: 'Compare stats for multiple players/teams in one place',
-          imgSrc: stattostat,
-          link: 'https://stattostat.netlify.app',
           selected: false,
         },
       ],
