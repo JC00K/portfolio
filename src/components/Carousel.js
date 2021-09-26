@@ -1,6 +1,7 @@
 import React from 'react';
 import sketchi from '../images/sketchi.png';
 import earthmoon from '../images/earthmoon.png';
+import stattostat from '../images/stattostat.png';
 import Card from './Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -24,6 +25,14 @@ class Carousel extends React.Component {
           subTitle: 'Interactive render of the Earth and Moon',
           imgSrc: earthmoon,
           link: 'https://earth-moon-render.herokuapp.com/',
+          selected: false,
+        },
+        {
+          id: 2,
+          title: 'Stat To Stat',
+          subTitle: 'Compare stats for multiple players/teams in one place',
+          imgSrc: stattostat,
+          link: 'https://stattostat.netlify.app',
           selected: false,
         },
       ],
