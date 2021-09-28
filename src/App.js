@@ -50,7 +50,7 @@ class App extends React.Component {
                 </Link>
                 <a
                   className='nav-link'
-                  href='https://drive.google.com/file/d/1LO6PUbpChW7TN_eBgDJV1Dhl2KpN4Ffi/view?usp=sharing'
+                  href='https://drive.google.com/file/d/1fljLGqgpSx1wCiLuogymSgT4ENgd0UPs/view?usp=sharing'
                   target='_blank'
                   rel='noreferrer'
                 >
